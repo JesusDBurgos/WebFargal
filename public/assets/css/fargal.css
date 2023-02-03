@@ -1,0 +1,10 @@
+.sidebarm {
+    display: inline-block;
+    background: #feba56;
+    flex: content;
+    flex-direction: column;
+    height: 100%;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
