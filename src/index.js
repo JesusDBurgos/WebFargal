@@ -1,20 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.js';
+import './App.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Login from './routes/Login.jsx';
+import ErrorPage from './error-page';
+import Sidebar from './components/Sidebar';
+import Users from './pages/Users';
+import Orders from './pages/Orders';
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Login/>,
+    errorElement: <ErrorPage />,
+  },
+  /* {
+    path:"/app/orders",
+    element:<Orders/>,
+    children: [{
+        path: "/app/*"
+    }]
+  }, */
+  {
+    path:"/app",
+    element:<Sidebar />,
+    children: [
+      {
+        path: "/app/users",
+        element: <Users />,
+      },
+      {
+        path: "/app/orders",
+        element: <Orders />,
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route path="/app/*" element={<App />} />
-      </Routes>
-    </BrowserRouter>
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
 

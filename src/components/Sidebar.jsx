@@ -3,7 +3,7 @@ import {
     FaRegChartBar,
     FaBars, FaUsers, FaRegListAlt, 
 } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ const Sidebar = ({children}) => {
                     )) 
                 }
             </div>
-           <main>{children}</main>
+           <main><Outlet /></main>
            
         </div></>
     );

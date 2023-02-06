@@ -23,7 +23,7 @@ const Login = () => {
             <input className="form-check-input" type="checkbox" /> Recordarme
             </label>
         </div> */}
-        <Link to={"/app/*"} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <Link to={"/app/orders"} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
         <button type="submit" className="btn btn-primary mb-3">Ingresar</button>
         </Link>
         </form>
