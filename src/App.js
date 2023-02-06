@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Sidebar from './components/Sidebar.jsx';
 import Login from './pages/Login.jsx';
@@ -8,16 +8,13 @@ import Users from './pages/Users.jsx';
 
 function App() {
   return (
-    <BrowserRouter>
-    <Sidebar>
-      <Routes>
-        <Route path="/"element={<Orders/>} />
-        <Route path="/orders"element={<Orders/>} />
-        <Route path="/users"element={<Users/>} />
-        <Route path="/login"element={<Login/>} />
-      </Routes>
-    </Sidebar>
-    </BrowserRouter>
+          <Sidebar>
+              <Routes>
+                <Route path="/app/orders"element={<Orders />} />
+                <Route path="/app/users"element={<Users/>} />
+                <Route exact path="/"element={<Login/>} />
+              </Routes>
+          </Sidebar>
   );
 };
 

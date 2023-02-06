@@ -11,6 +11,12 @@ body{
   margin-left: 0;
   padding-left: 0;
 }
+.form-style{
+  display:flex;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px lightgray;
+}
 main{
   width: 100%;
   padding: 20px;

@@ -11,18 +11,18 @@ const Sidebar = ({children}) => {
     const [activeSection, setActiveSection] = useState(0);
     const menuItem=[
         {
-            path:"/orders",
+            path:"/app/orders",
             name:"Ordenes de compra",
             icon: <FaRegListAlt />
 
         },
         {
-            path:"/users",
+            path:"/app/users",
             name:"Usuarios",
             icon: <FaUsers />
         },
         {
-            path:"/login",
+            path:"/",
             name:"Cerrar sesión",
             icon: <FaRegChartBar />
         }
@@ -43,7 +43,7 @@ const Sidebar = ({children}) => {
                 </div>
                 {
                     menuItem.map((item, index)=>(
-                        <NavLink to={item.path} key={index} className={`link ${index === activeSection ? 'active' : ''}`} activeclassName="active" onClick={() => setActiveSection(index)}>
+                        <NavLink to={item.path} key={index} className={`link ${index === activeSection ? 'active' : ''}`} style={{textDecorationLine: "none"}} activeclassname="active" onClick={() => setActiveSection(index)}>
                             <div className="icon">{item.icon}</div>
                             <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
                         </NavLink>
